@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blazon Clocks | Haute Horlogerie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --black: #111111;
+            --white: #FFFFFF;
+            --gold: #C6A776;
+            --silver: #E5E5E5;
+            --gray: #3A3A3A;
+            --highlight: #A78B5D;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--black);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Premium Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(198, 167, 118, 0.2);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .logo:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            position: relative;
+            transition: all 0.4s ease;
+            opacity: 0.9;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section - Ultra Premium */
+        .hero {
+            height: 110vh;
+            background: linear-gradient(rgba(17, 17, 17, 0.3), rgba(17, 17, 17, 0.1)), 
+                        url('https://images.unsplash.com/photo-1516886638602-bb6920b0af91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(17,17,17,0.6) 0%, rgba(17,17,17,0) 50%, rgba(17,17,17,0.6) 100%);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 15px 40px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: -1;
+        }
+        
+        .cta-button:hover {
+            color: var(--black);
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards, bounce 2s infinite 2.5s;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 8rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--black);
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            letter-spacing: 1px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            overflow: hidden;
+            height: 600px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--gold);
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        
+        .about-image:hover::before {
+            opacity: 1;
+        }
+        
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+        
+        /* Quality Section */
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .quality-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(198, 167, 118, 0.2);
+        }
+        
+        .quality-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(198, 167, 118, 0.1) 0%, rgba(198, 167, 118, 0) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        
+        .quality-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quality-card:hover::before {
+            opacity: 1;
+        }
+        
+        .quality-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            transition: transform 0.6s ease;
+        }
+        
+        .quality-card:hover .quality-icon {
+            transform: scale(1.1);
+        }
+        
+        .quality-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+        
+        .quality-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        /* Products Marquee */
+        .marquee {
+            background: var(--black);
+            padding: 2rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        .marquee-container {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .marquee-item {
+            display: inline-block;
+            margin: 0 3rem;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        .marquee-item::after {
+            content: '•';
+            position: absolute;
+            right: -2.5rem;
+            color: var(--gold);
+        }
+        
+        .marquee-item:last-child::after {
+            display: none;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+            cursor: pointer;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(17, 17, 17, 0.9), transparent);
+            padding: 3rem;
+            color: var(--white);
+            transform: translateY(100px);
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .product-card:hover .product-overlay {
+            transform: translateY(0);
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-overlay p {
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Enquiry Section */
+        .enquiry-section {
+            background: var(--black);
+            color: var(--white);
+            padding: 6rem 5%;
+        }
+        
+        .enquiry-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .enquiry-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .enquiry-text p {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+        
+        .enquiry-form input,
+        .enquiry-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-family: 'Raleway', sans-serif;
+            transition: all 0.4s ease;
+        }
+        
+        .enquiry-form input:focus,
+        .enquiry-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .enquiry-form button {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 15px 40px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .enquiry-form button:hover {
+            background: var(--white);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+        
+        .contact-info p {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+        
+        .contact-details {
+            margin-bottom: 3rem;
+        }
+        
+        .contact-details div {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-right: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .map-container {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 5rem 5% 3rem;
+        }
+        
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: color 0.4s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-links h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        [data-animate="left"] {
+            transform: translateX(-50px);
+        }
+        
+        [data-animate="right"] {
+            transform: translateX(50px);
+        }
+        
+        [data-animate].animated {
+            opacity: 1;
+            transform: translate(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">BLAZON</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#quality">Quality & Service</a>
+                <a href="#products">Collections</a>
+                <a href="#enquiry">Enquiry</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Ultra Premium -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Crafting Timepieces of Unrivaled Distinction</h1>
+            <p>Since 1947, Blazon has represented the pinnacle of Swiss watchmaking excellence, creating mechanical wonders that transcend generations.</p>
+            <a href="#products" class="cta-button">Explore Our Collections</a>
+        </div>
+        <div class="hero-scroll" onclick="scrollToSection('about')">Scroll to Discover</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" data-animate>Horological Excellence</h2>
+        <div class="about-content">
+            <div class="about-text" data-animate>
+                <h3>The Blazon Legacy</h3>
+                <p>Founded in the Swiss Jura mountains, Blazon has spent seven decades perfecting the art of haute horlogerie. Each timepiece is a testament to the uncompromising standards set by our founder, Henri Blazon.</p>
+                <p>Our atelier brings together master watchmakers, engineers, and artisans who share a singular passion for mechanical perfection. Every component, from the smallest screw to the most complex tourbillon, is crafted with obsessive attention to detail.</p>
+                <p>Blazon watches are more than instruments of time - they are heirlooms that embody the pinnacle of human craftsmanship.</p>
+            </div>
+            <div class="about-image" data-animate="right">
+                <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Blazon Watchmaking">
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Section -->
+    <section id="quality">
+        <h2 class="section-title" data-animate>The Blazon Standard</h2>
+        <div class="quality-grid">
+            <div class="quality-card" data-animate>
+                <div class="quality-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>Exceptional Materials</h3>
+                <p>We source only the finest 18k gold, platinum, and rare alloys, paired with flawless diamonds and precious stones hand-selected by our gemologists.</p>
+            </div>
+            <div class="quality-card" data-animate style="transition-delay: 0.2s">
+                <div class="quality-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>In-House Movements</h3>
+                <p>Every Blazon caliber is designed, manufactured, assembled, and decorated entirely within our Swiss manufacture, meeting the highest chronometric standards.</p>
+            </div>
+            <div class="quality-card" data-animate style="transition-delay: 0.4s">
+                <div class="quality-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Master Certification</h3>
+                <p>Each completed watch undergoes 500 hours of rigorous testing before receiving the Blazon Master Certification - our personal guarantee of excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Marquee -->
+    <div class="marquee">
+        <div class="marquee-container">
+            <span class="marquee-item">Chronograph</span>
+            <span class="marquee-item">Tourbillon</span>
+            <span class="marquee-item">Perpetual Calendar</span>
+            <span class="marquee-item">Minute Repeater</span>
+            <span class="marquee-item">Moonphase</span>
+            <span class="marquee-item">GMT</span>
+            <span class="marquee-item">Skeleton</span>
+            <span class="marquee-item">Chronograph</span>
+            <span class="marquee-item">Tourbillon</span>
+            <span class="marquee-item">Perpetual Calendar</span>
+            <span class="marquee-item">Minute Repeater</span>
+            <span class="marquee-item">Moonphase</span>
+            <span class="marquee-item">GMT</span>
+            <span class="marquee-item">Skeleton</span>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2 class="section-title" data-animate>Signature Collections</h2>
+        <div class="products-grid">
+            <div class="product-card" data-animate>
+                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Regal Collection" class="product-image">
+                <div class="product-overlay">
+                    <h3>Regal Collection</h3>
+                    <p>Our most prestigious line featuring grand complications in precious metals</p>
+                    <a href="#" class="cta-button">Discover</a>
+                </div>
+            </div>
+            <div class="product-card" data-animate style="transition-delay: 0.2s">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1399&q=80" alt="Heritage Series" class="product-image">
+                <div class="product-overlay">
+                    <h3>Heritage Series</h3>
+                    <p>Timeless designs inspired by our 1947 originals</p>
+                    <a href="#" class="cta-button">Discover</a>
+                </div>
+            </div>
+            <div class="product-card" data-animate style="transition-delay: 0.4s">
+                <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Contemporary Line" class="product-image">
+                <div class="product-overlay">
+                    <h3>Contemporary Line</h3>
+                    <p>Modern interpretations of classic watchmaking</p>
+                    <a href="#" class="cta-button">Discover</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Section -->
+    <section id="enquiry" class="enquiry-section">
+        <div class="enquiry-container">
+            <div class="enquiry-text" data-animate>
+                <h2>Experience Blazon</h2>
+                <p>Discover the art of Swiss watchmaking with a private appointment at our Geneva salon. Our horological experts will guide you through our collections and help you find the perfect timepiece.</p>
+                <p>For inquiries about limited editions or custom commissions, please complete the form.</p>
+            </div>
+            <form class="enquiry-form" data-animate="right">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <textarea rows="4" placeholder="Your Enquiry"></textarea>
+                <button type="submit">Request Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title" data-animate>Visit Our Atelier</h2>
+        <div class="contact-container">
+            <div class="contact-info" data-animate>
+                <h3>Blazon Flagship Salon</h3>
+                <p>Our Geneva headquarters offers an immersive experience into the world of haute horlogerie. Schedule a private viewing to witness our craftsmanship firsthand.</p>
+                
+                <div class="contact-details">
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>18 Rue du Rhône, 1204 Geneva, Switzerland</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <p>+41 22 319 6767</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <p>concierge@blazon.ch</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-clock"></i>
+                        <p>Monday - Saturday: 10AM - 6PM<br>Closed Sundays</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container" data-animate="right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.698986023841!2d6.148259315583885!3d46.20439057911571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c6521de7a1a21%3A0x30a1a11a68e3e20!2sPatek%20Philippe%20Museum!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">BLAZON</a>
+                <p>Swiss watchmaking excellence since 1947. Each Blazon timepiece represents the pinnacle of mechanical artistry and precision engineering.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#">Regal Collection</a></li>
+                    <li><a href="#">Heritage Series</a></li>
+                    <li><a href="#">Contemporary Line</a></li>
+                    <li><a href="#">Limited Editions</a></li>
+                    <li><a href="#">Custom Commissions</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">After-Sales Service</a></li>
+                    <li><a href="#">Authentication</a></li>
+                    <li><a href="#">Watch Care</a></li>
+                    <li><a href="#">Investment Advisory</a></li>
+                    <li><a href="#">Heritage Restoration</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">Our History</a></li>
+                    <li><a href="#">Manufacture</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Blazon Horlogerie Suisse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling with offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerHeight = document.querySelector('nav').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            const target = document.getElementById(sectionId);
+            const headerHeight = document.querySelector('nav').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('[data-animate]');
+            const windowHeight = window.innerHeight;
+            const triggerPoint = windowHeight * 0.8;
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                
+                if (elementPosition < triggerPoint) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initialize animations
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.padding = '1rem 5%';
+                nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.padding = '1.8rem 5%';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
